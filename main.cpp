@@ -59,7 +59,7 @@ void print_queue(int j){
         cout << "Kolejka nr "<<myrank<<"Lamport: " << queue_proc[ i ].lamport << " nr proc:  " << queue_proc[ i ].proc_nr  << "\n";
     }
 pthread_mutex_unlock(&myrank_mutex);
-    pthread_mutex_unlock(&queue_mutex); ///////// -----------------czy one nie musza byc zdejmowane w odwrotneij kol niz zakladane?????????
+    pthread_mutex_unlock(&queue_mutex); 
 
 }
 
@@ -189,7 +189,7 @@ bool wer_queue(){
         
         if(queue_proc[0].proc_nr!=myrank){
             
-            pthread_mutex_unlock(&myrank_mutex); /////// ----------------jak tu znowu z kolejnoscia
+            pthread_mutex_unlock(&myrank_mutex); 
 pthread_mutex_unlock(&queue_mutex);
             return false;
         }
